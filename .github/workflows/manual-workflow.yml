@@ -1,0 +1,15 @@
+name: Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Goweezeflo'
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hello ${{ github.event.inputs.name }}"
+        run: echo "Hello ${{ github.event.inputs.name }}"
